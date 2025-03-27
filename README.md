@@ -8,7 +8,7 @@ To run the model, you need to download the dataset using the [link](https://driv
 
 ├── 3DGHK.py       
 ├── load_data.py     
-├── dataset/ \
+├── datasets/ \
 │   ├── .sdf files \
 ├── README.md                    
 └── requirements.txt    
