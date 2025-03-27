@@ -12,13 +12,13 @@ After downloading, place the dataset inside the datasets/ directory.
 ` python 3DGHK.py --dataset gamma --kernel_type linear3d --seed 41 --num_split 10`\
 \
  **Arguments**\
--dataset : Name of the dataset to use.\
--kernel_type : Type of kernel (linear3d, cmg_kernel).\
--seed : Random seed (41 for tox21 and 42 for others).\
--num_split : Number of data splits.\
+- dataset : Name of the dataset to use.\
+- kernel_type : Type of kernel (linear3d, cmg_kernel).\
+- seed : Random seed (41 for tox21 and 42 for others).\
+- num_split : Number of data splits.\
 
 ## Structure of files
-`
+
 ├── 3DGHK.py \        
 ├── load_data.py \    
 ├── dataset/ \
@@ -30,9 +30,9 @@ After downloading, place the dataset inside the datasets/ directory.
 ## 📝 Citation
 
 If you use this code in your research, please cite: \
-`@article{,\
+@article{,\
   author    = {},\
   title     = {Efficient-3D-kernels-for-molecular-property-predictions},\
   journal   = {},\
   year      = {},\
-}`
+}
