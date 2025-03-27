@@ -1,9 +1,8 @@
 # Efficient-3D-kernels-for-molecular-property-prediction 
 
 ## 📥 Dataset Download 
-To run the model, you need to download the dataset using the [link](https://drive.google.com/drive/folders/1F05h8623pwLuN4NF_AMTa1ilzYBzIdaL?usp=sharing):
+To run the model, you need to download the dataset using the [link](https://drive.google.com/drive/folders/1jW6Dz8wzTAipr_5852uM9yZObBn0S8OH?usp=sharing):
 
-After downloading, place the .sdf files inside the datasets/ directory.
 
 ## Structure of files
 
