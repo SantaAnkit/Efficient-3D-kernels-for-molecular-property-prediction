@@ -6,12 +6,12 @@ To run the model, you need to download the dataset using the [link](https://driv
 
 ## Structure of files
 
-├── 3DGHK.py       
-├── load_data.py     
-├── datasets/ \
-│   ├── .sdf files \
-├── README.md                    
-└── requirements.txt    
+|---- 3DGHK.py       
+|---- load_data.py     
+|---- datasets/ \
+│    |---- .sdf files \
+|---- README.md                    
+|---- requirements.txt    
 
 ## 🔧 Dependencies
 * Ensure you have the following dependencies installed before running the script:
