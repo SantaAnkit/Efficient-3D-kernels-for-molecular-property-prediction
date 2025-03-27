@@ -21,8 +21,8 @@ After downloading, place the .sdf files inside the datasets/ directory.
 
 ├── 3DGHK.py       
 ├── load_data.py     
-├── dataset/ 
-│   ├── .sdf files 
+├── dataset/ \
+│   ├── .sdf files \
 ├── README.md                    
 └── requirements.txt    `  
 
