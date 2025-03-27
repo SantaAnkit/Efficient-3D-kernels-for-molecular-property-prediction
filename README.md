@@ -18,21 +18,21 @@ After downloading, place the dataset inside the datasets/ directory.
 -num_split : Number of data splits.\
 
 ## Structure of files
-
-├── 3DGHK.py\              
-├── load_data.py      \    
-├── dataset/             \
-│   ├── .sdf files   \
+`
+├── 3DGHK.py \        
+├── load_data.py \    
+├── dataset/ \
+│   ├── .sdf files \
 ├── README.md  \                  
-└── requirements.txt       
+└── requirements.txt    `  
 
 
 ## 📝 Citation
 
 If you use this code in your research, please cite: \
-@article{,\
+`@article{,\
   author    = {},\
   title     = {Efficient-3D-kernels-for-molecular-property-predictions},\
   journal   = {},\
   year      = {},\
-}
+}`
