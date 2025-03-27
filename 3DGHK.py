@@ -59,8 +59,8 @@ class GraphHopper(Kernel):
         super(GraphHopper, self).initialize()
         if not self._initialized["kernel_type"]:
             if type(self.kernel_type) is str:
-                if self.kernel_type == "linear3d":
-                    self.metric_ = linear3d_kernel
+                if self.kernel_type == "linear3dghk":
+                    self.metric_ = linear3dghk_kernel
                     self.calculate_norm_ = False
                 elif self.kernel_type == "cmg_kernel":
                     self.metric_ = cmk_kernel
@@ -338,75 +338,7 @@ def simi(dict1,dict2):
     result = np.sum(matrix_prod)
             
     return result
-
-'''
-def cmk_kernel(x,y):
-    M_i,NA_i = x
-    M_j,NA_j = y
-
-    # Convert Numpy arrays to PyTorch tensors and move to GPU
-    M_i = torch.tensor(M_i, device='cuda', dtype=torch.float32)
-    M_j = torch.tensor(M_j, device='cuda', dtype=torch.float32)
-    
-    
-    batch_size_i = 32
-    batch_size_j = 32  
-
-    #delta_ker = []
-
-    # Compute the weight matrix using matrix multiplication
-    weight_matrix = torch.matmul(M_i, M_j.t())
-    #print('matrics cmk kernel:',M_i.shape,M_j.shape)
-    #print("weight matrix======>", weight_matrix.size())
-    pair_sim = torch.tensor([])                  #for each pair instead of 1 or 0 we must have a simillarity 
-    for start_i in range(0, len(NA_i), batch_size_i):
-        end_i = min(start_i + batch_size_i, len(NA_i))
-        batch_i = NA_i[start_i:end_i]
-        empty_tensor = torch.tensor([])          #example is in ipad
-        for start_j in range(0, len(NA_j), batch_size_j):
-            end_j = min(start_j + batch_size_j, len(NA_j))
-            batch_j = NA_j[start_j:end_j]
-
-          
-            points_i = torch.stack([torch.tensor(i['points'][1][4:], device='cuda', dtype=torch.float32) for i in batch_i]) # Create tensors for points in batch_i and batch_j 
-            points_j = torch.stack([torch.tensor(j['points'][1][4:], device='cuda', dtype=torch.float32) for j in batch_j]) # torch.stack concat the same length tensor into a single tensor
-
-          
-            dot_products = torch.matmul(points_i, points_j.t())
-
-            # Create a mask for matching points and set similarity values accordingly
-            
-            mask = torch.tensor([[i['points'][1][:4] == j['points'][1][:4] for j in batch_j] for i in batch_i], device='cuda', dtype=torch.float32) #here i['points'][1][:4] are the labels we need to check
-            #print("similarity", similarity,"mask",mask)
-            similarity = dot_products * mask
-            empty_tensor = torch.cat([empty_tensor.cuda(), similarity], dim=1)
-    
-    
-            
-            
-        pair_sim = torch.cat([pair_sim.cuda(), empty_tensor], dim=0)
-    #print('similarity matrix c-mkg:',pair_sim)
-    s = torch.dot(torch.flatten(weight_matrix), torch.flatten(pair_sim))
-    
-   
-    
-    return s.item() 
-
-def linear3d_kernel(x,y): 
-    M_i,NA_i = x
-    M_j,NA_j = y
-    M_i = torch.tensor(M_i,device='cuda',dtype=torch.float32)
-    M_j = torch.tensor(M_j,device='cuda',dtype=torch.float32)
-    # Compute the weight matrix using matrix multiplication
-    weight_matrix = torch.matmul(M_i, M_j.T)
-    #print('matricss :',M_i.shape,M_j.shape)
-    #print('weight matrix: ',weight_matrix)
-    a = torch.FloatTensor([[simi(node_i, node_j) for node_j in NA_j] for node_i in NA_i])
-    #print('similarity matrix: ',a)
-    return torch.dot(weight_matrix.flatten(), a.flatten().to('cuda')) 
-    #return weight_matrix
-
-'''
+	
 def cmk_kernel(x, y):
     M_i, NA_i = x
     M_j, NA_j = y
@@ -457,7 +389,7 @@ def cmk_kernel(x, y):
     return s.item()
 
 
-def linear3d_kernel(x, y): 
+def linear3dghk_kernel(x, y): 
     M_i, NA_i = x
     M_j, NA_j = y
 
@@ -472,9 +404,6 @@ def linear3d_kernel(x, y):
                      device=DEVICE, dtype=torch.float32)
 
     return torch.dot(weight_matrix.flatten(), a.flatten())
-
-
-
 
 def kernelmatrix2distmatrix(K):
     """Convert a Kernel Matrix to a Distance Matrix.
@@ -883,9 +812,9 @@ if __name__ == '__main__':
 
     mec.add_argument(
         '--kernel_type',
-        help='choose a linear3d or cmg_kernel',
+        help='choose a linear3dghk or cmg_kernel',
         type=str,  
-        choices=['linear3d', 'cmg_kernel'])
+        choices=['linear3dghk', 'cmg_kernel'])
 
     
     parser.add_argument(
@@ -918,7 +847,7 @@ if __name__ == '__main__':
     start = time.time()
     
     gk = GraphHopper(normalize=True,kernel_type=kernel) 
-    if kernel == 'linear3d':
+    if kernel == 'linear3dghk':
     	input_3d = ker_input_3dghk(new_data_list)
     elif kernel=='cmg_kernel':
     	input_3d = ker_input_cmgk(new_data_list)
