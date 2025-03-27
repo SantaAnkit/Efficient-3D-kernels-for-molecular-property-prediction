@@ -18,11 +18,11 @@ To run the model, you need to download the dataset using the [link](https://driv
 
 ## 🚀 Running the Model
 
-` python 3DGHK.py --dataset gamma --kernel_type linear3d --seed 41 --num_split 10`\
+` python 3DGHK.py --dataset gamma --kernel_type linear3dghk --seed 41 --num_split 10`\
 \
  **Arguments**
-- dataset : Name of the dataset to use.
-- kernel_type : Type of kernel (linear3d, cmg_kernel).
+- dataset : Name of the dataset to use (eg 1798, gamma etc.).
+- kernel_type : Type of kernel (linear3dghk, cmg_kernel).
 - seed : Random seed (41 for tox21 and 42 for others).
 - num_split : Number of data splits.
 ## 📝 Citation
