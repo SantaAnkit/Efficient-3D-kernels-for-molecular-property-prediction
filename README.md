@@ -14,7 +14,7 @@ To run the model, you need to download the dataset using the [link](https://driv
 |---- requirements.txt    
 
 ## 🔧 Dependencies
-* Ensure you have the following dependencies installed before running the script:
+* Ensure that dependencies are installed before running the script.
 
 ## 🚀 Running the Model
 
