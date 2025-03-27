@@ -3,7 +3,7 @@
 ## 📥 Dataset Download 
 To run the model, you need to download the dataset using the [link](https://drive.google.com/drive/folders/1F05h8623pwLuN4NF_AMTa1ilzYBzIdaL?usp=sharing):
 
-After downloading, place the dataset inside the datasets/ directory.
+After downloading, place the .sdf files inside the datasets/ directory.
 ## 🔧 Dependencies
 * Ensure you have the following dependencies installed before running the script:
 
@@ -19,17 +19,18 @@ After downloading, place the dataset inside the datasets/ directory.
 
 ## Structure of files
 
-├── 3DGHK.py \        
-├── load_data.py \    
-├── dataset/ \
-│   ├── .sdf files \
-├── README.md  \                  
+├── 3DGHK.py       
+├── load_data.py     
+├── dataset/ 
+│   ├── .sdf files 
+├── README.md                    
 └── requirements.txt    `  
 
 
 ## 📝 Citation
 
-If you use this code in your research, please cite: \
+If you use this code in your research, please cite:  
+
 @article{,\
   author    = {},\
   title     = {Efficient-3D-kernels-for-molecular-property-predictions},\
