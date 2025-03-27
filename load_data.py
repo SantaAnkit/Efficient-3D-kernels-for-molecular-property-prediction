@@ -146,7 +146,7 @@ def process_dataset(dataset_name):
     """
     
     mol_data= ['1798','1843','2258','2689','435008', '435034','463087','485290']
-    fol = f'moldata/datasets'
+    fol = f'datasets'
     active_sdf = os.path.join(fol, f'{dataset_name}_actives_new.sdf')
     inactive_sdf = os.path.join(fol, f'{dataset_name}_inactives_new.sdf')
     
