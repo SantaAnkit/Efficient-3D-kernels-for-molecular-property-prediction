@@ -29,9 +29,18 @@ To run the model, you need to download the dataset using the [link](https://driv
 
 If you use this code in your research, please cite:  
 
-@article{,\
-  author    = {},\
-  title     = {Efficient-3D-kernels-for-molecular-property-predictions},\
-  journal   = {},\
-  year      = {},\
+@article{10.1093/bioinformatics/btaf208,
+    author = {Ankit and Bhadra, Sahely and Rousu, Juho},
+    title = {Efficient 3D kernels for molecular property prediction},
+    journal = {Bioinformatics},
+    volume = {41},
+    number = {Supplement_1},
+    pages = {i58-i67},
+    year = {2025},
+    month = {07},
+    abstract = {This paper addresses the challenge of incorporating 3-dimensional (3D) structural information in graph kernels for machine learning-based virtual screening, a crucial task in drug discovery. Existing kernels that capture 3D information often suffer from high computational complexity, which limits their scalability.To overcome this, we propose the 3D chain motif graph kernel, which effectively integrates essential 3D structural properties—bond length, bond angle, and torsion angle—within the three-hop neighborhood of each atom in a molecule. In addition, we introduce a more computationally efficient variant, the 3D graph hopper kernel (3DGHK), which reduces the complexity from the state-of-the-art O(n6) (for the 3D pharmacophore kernel) to O(n2(m+log(n)+δ2+dT6)). Here, n is the number of nodes, T is the highest degree of the node, m is the number of edges, δ is the diameter of the graph, and d is the dimension of the attributes of the nodes. We conducted experiments on 21 datasets, demonstrating that 3DGHK outperforms other state-of-the-art 2D and 3D graph kernels, but it also surpasses deep learning models in classification accuracy, offering a powerful and scalable solution for virtual screening tasks.Our code is publicly available at https://github.com/SantaAnkit/Efficient-3D-kernels-for-molecular-property-prediction.git.},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btaf208},
+    url = {https://doi.org/10.1093/bioinformatics/btaf208},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/41/Supplement\_1/i58/63745297/btaf208.pdf},
 }
