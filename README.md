@@ -3,6 +3,9 @@
 ## 📥 Dataset Download 
 To run the model, you need to download the dataset using the [link](https://drive.google.com/drive/folders/1jW6Dz8wzTAipr_5852uM9yZObBn0S8OH?usp=sharing):
 
+## 📥 Supplymentary Material
+The supplymentary material can be found [here](https://drive.google.com/file/d/11oOnCy-pxiRGAnfZZXyJiMVCMGgumKex/view?usp=drive_link).
+
 
 ## Structure of files
 ```
